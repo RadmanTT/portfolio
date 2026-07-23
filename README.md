@@ -1,9 +1,16 @@
-# Radman Tahsildoust Portfolio
+# Radman Tahsildoust Portfolio V4
 
-A polished, responsive personal cybersecurity portfolio built with plain HTML, CSS, and JavaScript.
+A production-ready, recruiter-focused cybersecurity portfolio built for GitHub Pages.
 
-## Deploy
+## Features
 
-Upload the contents of this folder to the root of your GitHub repository and publish from the `main` branch using GitHub Pages.
+- Responsive premium design
+- Dark and light themes
+- Recruiter mode
+- Interactive project details
+- Career journey
+- Cyber Lab
+- Résumé download
+- No paid services or build step required
 
-No build step or paid service is required.
+Upload the contents of this folder to the root of the GitHub repository. GitHub Pages will redeploy automatically.
