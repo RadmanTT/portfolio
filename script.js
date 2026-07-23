@@ -80,6 +80,7 @@ document.querySelectorAll(".project-open").forEach(button => {
   button.addEventListener("click", () => {
     const data = projectData[button.dataset.project];
     Object.keys(fields).forEach(key => fields[key].textContent = data[key]);
+    modal.hidden = false;
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -89,6 +90,7 @@ document.querySelectorAll(".project-open").forEach(button => {
 document.querySelectorAll("[data-close-modal]").forEach(el => el.addEventListener("click", closeModal));
 function closeModal(){
   modal.classList.remove("open");
+  modal.hidden = true;
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
@@ -96,6 +98,8 @@ function closeModal(){
 const recruiterPanel = document.querySelector(".recruiter-panel");
 const panelBackdrop = document.querySelector(".panel-backdrop");
 document.querySelectorAll(".recruiter-open").forEach(button => button.addEventListener("click", () => {
+  recruiterPanel.hidden = false;
+  panelBackdrop.hidden = false;
   recruiterPanel.classList.add("open");
   panelBackdrop.classList.add("open");
   recruiterPanel.setAttribute("aria-hidden", "false");
@@ -103,6 +107,8 @@ document.querySelectorAll(".recruiter-open").forEach(button => button.addEventLi
 function closePanel(){
   recruiterPanel.classList.remove("open");
   panelBackdrop.classList.remove("open");
+  recruiterPanel.hidden = true;
+  panelBackdrop.hidden = true;
   recruiterPanel.setAttribute("aria-hidden", "true");
 }
 document.querySelector(".panel-close").addEventListener("click", closePanel);

@@ -1,16 +1,11 @@
-# Radman Tahsildoust Portfolio V4
+# Radman Tahsildoust Portfolio V4.1
 
-A production-ready, recruiter-focused cybersecurity portfolio built for GitHub Pages.
+This update corrects the portrait and footer presentation:
 
-## Features
+- The headshot is completely unobstructed
+- Supporting labels sit beneath the portrait
+- Project and recruiter overlays remain fully hidden until opened
+- The footer has a cleaner responsive layout
+- CSS and JavaScript use cache-busting version parameters
 
-- Responsive premium design
-- Dark and light themes
-- Recruiter mode
-- Interactive project details
-- Career journey
-- Cyber Lab
-- Résumé download
-- No paid services or build step required
-
-Upload the contents of this folder to the root of the GitHub repository. GitHub Pages will redeploy automatically.
+Upload all files and the `assets` folder to the repository root.

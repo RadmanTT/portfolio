@@ -217,3 +217,83 @@ html.light h1 span{-webkit-text-stroke:1px rgba(10,23,34,.42)}
   .nav-cta{padding:9px 12px;font-size:.76rem}
   .journey-track,.modal-grid{grid-template-columns:1fr}
 }
+
+
+/* V4.1 corrections */
+[hidden]{display:none!important}
+
+.portrait-shell{overflow:hidden}
+.portrait-shell img{object-position:center 28%}
+.portrait-caption,.floating-card{display:none!important}
+.portrait-meta{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:14px;
+}
+.portrait-meta>div{
+  padding:14px 15px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(255,255,255,.025);
+}
+.portrait-meta small{
+  display:block;
+  color:var(--muted);
+  font-size:.72rem;
+  margin-bottom:4px;
+}
+.portrait-meta strong{
+  display:block;
+  font-size:.9rem;
+}
+
+.modal:not(.open),
+.recruiter-panel:not(.open),
+.panel-backdrop:not(.open){
+  display:none!important;
+}
+.modal.open{display:grid!important}
+.recruiter-panel.open{display:block!important}
+.panel-backdrop.open{display:block!important}
+
+.site-footer{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:54px 24px 34px;
+  border-top:1px solid rgba(255,255,255,.065);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:34px 60px;
+  color:var(--muted);
+}
+.footer-brand{
+  width:42px;height:42px;display:grid;place-items:center;
+  border-radius:14px;text-decoration:none;font-weight:800;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:#061018;margin-bottom:14px;
+}
+.site-footer p{max-width:520px;margin:0}
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(90px,1fr));
+  gap:10px 24px;
+  align-content:start;
+}
+.footer-links a,.footer-bottom a{color:var(--muted);text-decoration:none}
+.footer-links a:hover,.footer-bottom a:hover{color:var(--text)}
+.footer-bottom{
+  grid-column:1/-1;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:.9rem;
+}
+@media(max-width:680px){
+  .portrait-meta{grid-template-columns:1fr}
+  .site-footer{grid-template-columns:1fr}
+  .footer-links{grid-template-columns:repeat(2,1fr)}
+  .footer-bottom{flex-direction:column}
+}

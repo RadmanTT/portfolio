@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=4.1" />
 </head>
 <body>
   <div class="ambient ambient-one"></div>
@@ -56,18 +56,11 @@
         <div class="portrait-shell">
           <div class="portrait-glow"></div>
           <img src="assets/headshot.jpeg" alt="Professional headshot of Radman Tahsildoust" />
-          <div class="portrait-caption">
-            <span>Based in Texas</span>
-            <strong>Security Analyst</strong>
-          </div>
         </div>
-        <div class="floating-card card-one">
-          <small>Current focus</small>
-          <strong>Security Operations</strong>
-        </div>
-        <div class="floating-card card-two">
-          <small>Hands-on</small>
-          <strong>Linux · Azure · XDR</strong>
+        <div class="portrait-meta">
+          <div><small>Based in</small><strong>Texas</strong></div>
+          <div><small>Current focus</small><strong>Security Operations</strong></div>
+          <div><small>Hands-on</small><strong>Linux · Azure · XDR</strong></div>
         </div>
       </div>
     </section>
@@ -285,7 +278,7 @@
   </main>
 
 
-  <div class="modal" id="project-modal" aria-hidden="true">
+  <div class="modal" id="project-modal" aria-hidden="true" hidden>
     <div class="modal-backdrop" data-close-modal></div>
     <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
@@ -301,7 +294,7 @@
     </article>
   </div>
 
-  <aside class="recruiter-panel" aria-hidden="true">
+  <aside class="recruiter-panel" aria-hidden="true" hidden>
     <button class="panel-close" type="button" aria-label="Close recruiter mode">×</button>
     <p class="eyebrow">Recruiter mode</p>
     <h2>Radman Tahsildoust</h2>
@@ -318,13 +311,25 @@
       <span>Focus</span><strong>SOC · Cloud Security · Incident Response</strong>
     </div>
   </aside>
-  <div class="panel-backdrop"></div>
+  <div class="panel-backdrop" hidden></div>
 
-  <footer>
-    <span>© <span id="year"></span> Radman Tahsildoust</span>
-    <a href="#top">Back to top ↑</a>
+  <footer class="site-footer">
+    <div>
+      <a class="footer-brand" href="#top">RT</a>
+      <p>Security operations, cloud infrastructure, Linux, and continuous learning.</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:radman.tahsildoust@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/radman-tahsildoust-072692188/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://github.com/RadmanTT" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="assets/Radman-Tahsildoust-Resume.pdf" download>Résumé</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Radman Tahsildoust</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4.1"></script>
 </body>
 </html>
