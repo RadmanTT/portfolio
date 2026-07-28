@@ -1,11 +1,11 @@
-# Radman Tahsildoust Portfolio V4.1
+# Radman Tahsildoust Portfolio V5.2
 
-This update corrects the portrait and footer presentation:
+This step updates the landing-page hero for full-time cybersecurity job applications.
 
-- The headshot is completely unobstructed
-- Supporting labels sit beneath the portrait
-- Project and recruiter overlays remain fully hidden until opened
-- The footer has a cleaner responsive layout
-- CSS and JavaScript use cache-busting version parameters
+- States availability for full-time cybersecurity roles
+- Leads with security operations, incident response, and identity security
+- Highlights hands-on SOC investigations and core tools
+- Directs recruiters to professional security experience
+- Keeps the résumé download visible
 
 Upload all files and the `assets` folder to the repository root.
