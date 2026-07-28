@@ -1,0 +1,11 @@
+GOOGLE SEARCH SETUP
+
+1. Open Google Search Console.
+2. Choose “URL prefix.”
+3. Enter: https://radmantt.github.io/portfolio/
+4. Complete one of Google's offered ownership-verification methods.
+5. Open Sitemaps and submit: sitemap.xml
+6. Open URL Inspection, enter the homepage URL, and select Request Indexing.
+7. Add the portfolio URL to LinkedIn, your GitHub profile, and your resume.
+
+Google controls crawling and ranking, so no one can guarantee an exact position or indexing date. A distinctive full name, correct metadata, a sitemap, and relevant links improve discoverability.

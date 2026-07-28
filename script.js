@@ -125,3 +125,12 @@ themeButton.addEventListener("click", () => {
 document.addEventListener("keydown", event => {
   if(event.key === "Escape"){ closeModal(); closePanel(); }
 });
+
+document.querySelectorAll(".investigation-toggle").forEach(button => {
+  button.addEventListener("click", () => {
+    const details = button.nextElementSibling;
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!expanded));
+    details.hidden = expanded;
+  });
+});
