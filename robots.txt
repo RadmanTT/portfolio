@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://radmantt.github.io/portfolio/sitemap.xml
+Sitemap: https://radmantah.com/sitemap.xml
