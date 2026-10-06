@@ -1,4 +1,4 @@
-# Radman Tahsildoust Portfolio V6.0
+# Radman Tahsildoust Portfolio V6.1
 
 Recruiter-focused cybersecurity portfolio for full-time Security Analyst and SOC roles.
 
@@ -21,10 +21,10 @@ Upload every file and the complete `assets` folder to the repository root. GitHu
 
 ## After deployment
 
-1. Verify the live site at `https://radmantt.github.io/portfolio/`.
+1. Verify the live site at `https://radmantah.com/`.
 2. Add the live URL to LinkedIn, GitHub profile, and the resume.
 3. Add the site to Google Search Console using the URL-prefix method.
-4. Submit `https://radmantt.github.io/portfolio/sitemap.xml`.
+4. Submit `https://radmantah.com/sitemap.xml`.
 5. Request indexing for the homepage.
 
 A custom domain can be connected later without changing the site design.

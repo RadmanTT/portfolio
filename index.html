@@ -15,17 +15,17 @@
   <meta name="description" content="Radman Tahsildoust is a Security Analyst with hands-on SOC experience in Microsoft Defender XDR, Red Canary, Microsoft Entra ID, KQL, phishing investigations, identity security, and endpoint response." />
   <meta name="author" content="Radman Tahsildoust" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <link rel="canonical" href="https://radmantt.github.io/portfolio/" />
+  <link rel="canonical" href="https://radmantah.com/" />
   <meta name="theme-color" content="#071018" />
   <meta property="og:title" content="Radman Tahsildoust | Security Analyst" />
   <meta property="og:description" content="Security Analyst portfolio featuring hands-on SOC investigations, Microsoft Defender XDR, Red Canary, Entra ID, KQL, cloud, Linux, and technical projects." />
-  <meta property="og:url" content="https://radmantt.github.io/portfolio/" />
+  <meta property="og:url" content="https://radmantah.com/" />
   <meta property="og:site_name" content="Radman Tahsildoust Portfolio" />
-  <meta property="og:image" content="https://radmantt.github.io/portfolio/assets/headshot.jpeg" />
+  <meta property="og:image" content="https://radmantah.com/assets/headshot.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Radman Tahsildoust | Security Analyst" />
   <meta name="twitter:description" content="Hands-on SOC investigations, identity security, endpoint response, cloud, Linux, and security projects." />
-  <meta name="twitter:image" content="https://radmantt.github.io/portfolio/assets/headshot.jpeg" />
+  <meta name="twitter:image" content="https://radmantah.com/assets/headshot.jpeg" />
   <meta property="og:type" content="website" />
   <title>Radman Tahsildoust | Security Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,8 +39,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Radman Tahsildoust",
-    "url": "https://radmantt.github.io/portfolio/",
-    "image": "https://radmantt.github.io/portfolio/assets/headshot.jpeg",
+    "url": "https://radmantah.com/",
+    "image": "https://radmantah.com/assets/headshot.jpeg",
     "jobTitle": "Security Analyst",
     "address": {"@type": "PostalAddress", "addressRegion": "Texas", "addressCountry": "US"},
     "sameAs": [
@@ -57,8 +57,8 @@
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Home">RT</a>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
-    <nav class="nav-links" aria-label="Primary navigation">
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+    <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#investigations">Investigations</a>
@@ -84,8 +84,8 @@
           <a class="btn secondary" href="assets/Radman-Tahsildoust-Resume.pdf" download>Download résumé</a>
         </div>
         <div class="social-row">
-          <a href="https://www.linkedin.com/in/radman-tahsildoust-072692188/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a href="https://github.com/RadmanTT" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/radman-tahsildoust-072692188/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/RadmanTT" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           <a href="mailto:radman.tahsildoust@gmail.com">Email ↗</a>
         </div>
       </div>
@@ -191,8 +191,8 @@
           <h3>Phishing Campaign Investigation</h3>
           <p>Investigated a campaign affecting multiple mailboxes to determine delivery scope, user interaction, potential account impact, and required containment.</p>
           <div class="tag-row"><span>Defender XDR</span><span>Defender for Office 365</span><span>Entra ID</span><span>KQL</span></div>
-          <button class="investigation-toggle" type="button" aria-expanded="false">View investigation <span>+</span></button>
-          <div class="investigation-details" hidden>
+          <button class="investigation-toggle" type="button" aria-expanded="false" aria-controls="investigation-details-1">View investigation <span aria-hidden="true">+</span></button>
+          <div class="investigation-details" id="investigation-details-1" hidden>
             <div><h4>Investigation</h4><p>Reviewed email telemetry, correlated related alerts, validated whether links or attachments were accessed, and checked identity activity for suspicious authentication following delivery.</p></div>
             <div><h4>Response</h4><p>Supported malicious-message removal, session revocation, credential remediation, and verification of completed actions before closure.</p></div>
             <div><h4>Skills demonstrated</h4><p>Email security, scope analysis, identity validation, incident response, evidence-based closure.</p></div>
@@ -204,8 +204,8 @@
           <h3>Suspicious Sign-in Investigation</h3>
           <p>Analyzed unusual geographic and authentication activity to distinguish possible account compromise from legitimate travel, VPN egress, or failed access attempts.</p>
           <div class="tag-row"><span>Microsoft Entra ID</span><span>Defender XDR</span><span>Sign-in Logs</span><span>MFA</span></div>
-          <button class="investigation-toggle" type="button" aria-expanded="false">View investigation <span>+</span></button>
-          <div class="investigation-details" hidden>
+          <button class="investigation-toggle" type="button" aria-expanded="false" aria-controls="investigation-details-2">View investigation <span aria-hidden="true">+</span></button>
+          <div class="investigation-details" id="investigation-details-2" hidden>
             <div><h4>Investigation</h4><p>Reviewed sign-in location, device, authentication status, MFA results, session context, and surrounding activity to assess whether the event represented malicious access.</p></div>
             <div><h4>Response</h4><p>Supported session revocation and password-reset workflows when risk could not be safely excluded, then coordinated account restoration after remediation.</p></div>
             <div><h4>Skills demonstrated</h4><p>Identity telemetry analysis, false-positive validation, account containment, risk-based decision-making.</p></div>
@@ -217,8 +217,8 @@
           <h3>Potentially Unwanted Application Remediation</h3>
           <p>Investigated recurring software-updater and browser detections, traced associated endpoint activity, and supported complete removal and validation.</p>
           <div class="tag-row"><span>Defender XDR</span><span>Red Canary</span><span>KQL</span><span>Windows</span></div>
-          <button class="investigation-toggle" type="button" aria-expanded="false">View investigation <span>+</span></button>
-          <div class="investigation-details" hidden>
+          <button class="investigation-toggle" type="button" aria-expanded="false" aria-controls="investigation-details-3">View investigation <span aria-hidden="true">+</span></button>
+          <div class="investigation-details" id="investigation-details-3" hidden>
             <div><h4>Investigation</h4><p>Reviewed endpoint timelines, process relationships, persistence indicators, installed software, scheduled tasks, and registry evidence to establish scope.</p></div>
             <div><h4>Response</h4><p>Supported application removal, endpoint restriction and isolation workflows, artifact cleanup, malware scanning, and post-remediation verification.</p></div>
             <div><h4>Skills demonstrated</h4><p>Endpoint triage, process analysis, remediation coordination, persistence review, validation.</p></div>
@@ -230,8 +230,8 @@
           <h3>Credential-Access Detection Analysis</h3>
           <p>Reviewed recurring credential-access detections to determine whether they represented malicious behavior or approved administrative and migration activity.</p>
           <div class="tag-row"><span>Red Canary</span><span>Defender XDR</span><span>Process Analysis</span><span>Threat Validation</span></div>
-          <button class="investigation-toggle" type="button" aria-expanded="false">View investigation <span>+</span></button>
-          <div class="investigation-details" hidden>
+          <button class="investigation-toggle" type="button" aria-expanded="false" aria-controls="investigation-details-4">View investigation <span aria-hidden="true">+</span></button>
+          <div class="investigation-details" id="investigation-details-4" hidden>
             <div><h4>Investigation</h4><p>Examined alert context, affected endpoint activity, process lineage, related administrative actions, and available internal validation to determine intent.</p></div>
             <div><h4>Response</h4><p>Documented the supporting evidence and closed detections as validated legitimate activity only after confirmation and review found no additional threat indicators.</p></div>
             <div><h4>Skills demonstrated</h4><p>Alert triage, contextual analysis, false-positive determination, documentation, escalation judgment.</p></div>
@@ -378,7 +378,7 @@
       <p>I am targeting Security Analyst, SOC Analyst, Incident Response, Identity Security, and cloud-security roles.</p>
       <div class="hero-actions centered">
         <a class="btn primary" href="mailto:radman.tahsildoust@gmail.com">Email me</a>
-        <a class="btn secondary" href="https://www.linkedin.com/in/radman-tahsildoust-072692188/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/radman-tahsildoust-072692188/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </section>
   </main>
@@ -400,16 +400,16 @@
     </article>
   </div>
 
-  <aside class="recruiter-panel" aria-hidden="true" hidden>
+  <aside class="recruiter-panel" role="dialog" aria-modal="true" aria-labelledby="recruiter-title" aria-hidden="true" hidden>
     <button class="panel-close" type="button" aria-label="Close recruiter mode">×</button>
     <p class="eyebrow">Recruiter mode</p>
-    <h2>Radman Tahsildoust</h2>
+    <h2 id="recruiter-title">Radman Tahsildoust</h2>
     <p>Security Analyst with hands-on SOC experience in phishing investigation, identity response, endpoint detection, KQL-based analysis, Linux, cloud, Python, and SQL.</p>
     <div class="recruiter-links">
       <a class="btn primary" href="assets/Radman-Tahsildoust-Resume.pdf" download>Download résumé</a>
       <a class="btn secondary" href="mailto:radman.tahsildoust@gmail.com">Email Radman</a>
-      <a class="btn secondary" href="https://www.linkedin.com/in/radman-tahsildoust-072692188/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a class="btn secondary" href="https://github.com/RadmanTT" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/radman-tahsildoust-072692188/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="btn secondary" href="https://github.com/RadmanTT" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
     <div class="recruiter-summary">
       <span>Location</span><strong>Texas</strong>
@@ -426,8 +426,8 @@
     </div>
     <div class="footer-links">
       <a href="mailto:radman.tahsildoust@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/radman-tahsildoust-072692188/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="https://github.com/RadmanTT" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/radman-tahsildoust-072692188/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/RadmanTT" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="assets/Radman-Tahsildoust-Resume.pdf" download>Résumé</a>
     </div>
     <div class="footer-bottom">
@@ -436,6 +436,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=6.0"></script>
+  <script src="script.js?v=6.1"></script>
 </body>
 </html>
