@@ -1,30 +1,40 @@
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav-links");
 
-menuButton.addEventListener("click", () => {
-  const open = nav.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", String(open));
-});
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
+if (menuButton && nav) {
+  menuButton.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
   });
-});
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open menu");
+    });
   });
-}, { threshold: 0.12 });
+}
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+const revealElements = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealElements.forEach(el => observer.observe(el));
+} else {
+  revealElements.forEach(el => el.classList.add("visible"));
+}
 
 const projectData = {
   cloud: {
@@ -66,6 +76,7 @@ const projectData = {
 };
 
 const modal = document.getElementById("project-modal");
+const modalCloseButton = modal?.querySelector(".modal-close");
 const fields = {
   kicker: document.getElementById("modal-kicker"),
   title: document.getElementById("modal-title"),
@@ -76,59 +87,109 @@ const fields = {
   takeaway: document.getElementById("modal-takeaway")
 };
 
+let modalOpener = null;
+let recruiterOpener = null;
+
+function syncBodyScroll() {
+  const overlayOpen = modal?.classList.contains("open") || recruiterPanel?.classList.contains("open");
+  document.body.style.overflow = overlayOpen ? "hidden" : "";
+}
+
 document.querySelectorAll(".project-open").forEach(button => {
   button.addEventListener("click", () => {
     const data = projectData[button.dataset.project];
-    Object.keys(fields).forEach(key => fields[key].textContent = data[key]);
+    if (!data || !modal) return;
+
+    Object.keys(fields).forEach(key => {
+      if (fields[key]) fields[key].textContent = data[key];
+    });
+
+    modalOpener = button;
     modal.hidden = false;
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+    syncBodyScroll();
+    modalCloseButton?.focus();
   });
 });
 
 document.querySelectorAll("[data-close-modal]").forEach(el => el.addEventListener("click", closeModal));
-function closeModal(){
+
+function closeModal() {
+  if (!modal?.classList.contains("open")) return;
   modal.classList.remove("open");
   modal.hidden = true;
   modal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
+  syncBodyScroll();
+  modalOpener?.focus();
+  modalOpener = null;
 }
 
 const recruiterPanel = document.querySelector(".recruiter-panel");
 const panelBackdrop = document.querySelector(".panel-backdrop");
+const panelCloseButton = document.querySelector(".panel-close");
+
 document.querySelectorAll(".recruiter-open").forEach(button => button.addEventListener("click", () => {
+  if (!recruiterPanel || !panelBackdrop) return;
+  recruiterOpener = button;
   recruiterPanel.hidden = false;
   panelBackdrop.hidden = false;
   recruiterPanel.classList.add("open");
   panelBackdrop.classList.add("open");
   recruiterPanel.setAttribute("aria-hidden", "false");
+  syncBodyScroll();
+  panelCloseButton?.focus();
 }));
-function closePanel(){
+
+function closePanel() {
+  if (!recruiterPanel?.classList.contains("open")) return;
   recruiterPanel.classList.remove("open");
-  panelBackdrop.classList.remove("open");
+  panelBackdrop?.classList.remove("open");
   recruiterPanel.hidden = true;
-  panelBackdrop.hidden = true;
+  if (panelBackdrop) panelBackdrop.hidden = true;
   recruiterPanel.setAttribute("aria-hidden", "true");
+  syncBodyScroll();
+  recruiterOpener?.focus();
+  recruiterOpener = null;
 }
-document.querySelector(".panel-close").addEventListener("click", closePanel);
-panelBackdrop.addEventListener("click", closePanel);
+
+panelCloseButton?.addEventListener("click", closePanel);
+panelBackdrop?.addEventListener("click", closePanel);
 
 const themeButton = document.querySelector(".theme-toggle");
-const savedTheme = localStorage.getItem("portfolio-theme");
-if(savedTheme === "light") document.documentElement.classList.add("light");
-themeButton.addEventListener("click", () => {
+let savedTheme = null;
+try {
+  savedTheme = localStorage.getItem("portfolio-theme");
+} catch (_) {}
+
+if (savedTheme === "light") document.documentElement.classList.add("light");
+
+function syncThemeButton() {
+  if (!themeButton) return;
+  const isLight = document.documentElement.classList.contains("light");
+  themeButton.setAttribute("aria-pressed", String(isLight));
+  themeButton.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+}
+syncThemeButton();
+
+themeButton?.addEventListener("click", () => {
   document.documentElement.classList.toggle("light");
-  localStorage.setItem("portfolio-theme", document.documentElement.classList.contains("light") ? "light" : "dark");
+  syncThemeButton();
+  try {
+    localStorage.setItem("portfolio-theme", document.documentElement.classList.contains("light") ? "light" : "dark");
+  } catch (_) {}
 });
 
 document.addEventListener("keydown", event => {
-  if(event.key === "Escape"){ closeModal(); closePanel(); }
+  if (event.key !== "Escape") return;
+  if (modal?.classList.contains("open")) closeModal();
+  else if (recruiterPanel?.classList.contains("open")) closePanel();
 });
 
 document.querySelectorAll(".investigation-toggle").forEach(button => {
   button.addEventListener("click", () => {
     const details = button.nextElementSibling;
+    if (!details) return;
     const expanded = button.getAttribute("aria-expanded") === "true";
     button.setAttribute("aria-expanded", String(!expanded));
     details.hidden = expanded;
