@@ -1,0 +1,11 @@
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+*.local
+
+# Private credentials
+*.pem
+*.key
+credentials.json
+service-account*.json
